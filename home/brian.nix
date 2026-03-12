@@ -17,7 +17,11 @@
   home.stateVersion = "25.05";
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    userName = if hostName == "gaminglaptop" then "drakzon" else null;
+    userEmail = if hostName == "gaminglaptop" then "drakzonbm@gmail.com" else null;
+  };
   programs.zsh.enable = true;
 
   wayland.windowManager.sway = {
