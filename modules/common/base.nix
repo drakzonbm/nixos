@@ -71,12 +71,14 @@
     playerctl
     networkmanagerapplet
     kitty
+    telegram-desktop
+    nodejs_25
   ];
 
   fonts.packages = with pkgs; [
     dejavu_fonts
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     font-awesome
     nerd-fonts.jetbrains-mono
   ];
