@@ -21,6 +21,9 @@
             inherit self hostName;
           };
           modules = [
+            {
+              nixpkgs.config.allowUnfree = true;
+            }
             ./hosts/${hostName}/configuration.nix
             home-manager.nixosModules.home-manager
             {
