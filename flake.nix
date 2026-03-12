@@ -7,9 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-openclaw.url = "github:openclaw/nix-openclaw";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, nix-openclaw, ... }:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -23,6 +24,7 @@
           modules = [
             {
               nixpkgs.config.allowUnfree = true;
+              nixpkgs.overlays = [ nix-openclaw.overlays.default ];
             }
             ./hosts/${hostName}/configuration.nix
             home-manager.nixosModules.home-manager

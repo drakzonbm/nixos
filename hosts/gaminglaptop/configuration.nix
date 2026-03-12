@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./openclaw-node.nix
     ../../modules/common/base.nix
     ../../modules/common/packages.nix
     ../../modules/filesystems/btrfs.nix
