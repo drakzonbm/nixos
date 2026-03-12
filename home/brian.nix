@@ -285,5 +285,6 @@
     clickup
     notion-app-enhanced
     nomachine-client
+    teams
   ];
 }
