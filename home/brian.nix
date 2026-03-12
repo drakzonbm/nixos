@@ -1,19 +1,5 @@
 { pkgs, hostName, ... }:
 
-let
-  googleDotHackerCursor = pkgs.stdenvNoCC.mkDerivation {
-    pname = "googledot-hacker-cursor";
-    version = "2.0.0";
-    src = ../assets/cursors/GoogleDot-Hacker;
-    dontBuild = true;
-    installPhase = ''
-      runHook preInstall
-      mkdir -p $out/share/icons/GoogleDot-Hacker
-      cp -R ./* $out/share/icons/GoogleDot-Hacker/
-      runHook postInstall
-    '';
-  };
-in
 {
   xdg.mimeApps = {
     enable = true;
@@ -33,15 +19,15 @@ in
   programs.home-manager.enable = true;
 
   home.pointerCursor = {
-    package = googleDotHackerCursor;
-    name = "GoogleDot-Hacker";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
     size = 36;
     gtk.enable = true;
     x11.enable = true;
   };
 
   home.sessionVariables = {
-    XCURSOR_THEME = "GoogleDot-Hacker";
+    XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "36";
   };
 
