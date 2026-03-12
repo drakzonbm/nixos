@@ -284,5 +284,6 @@
     vscode
     clickup
     notion-app-enhanced
+    nomachine-client
   ];
 }
