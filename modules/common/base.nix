@@ -99,5 +99,13 @@
 
   services.openssh.enable = true;
 
+  programs.chromium = {
+    enable = true;
+    extensions = [
+      "fdjamakpfbbddfjaooikfcpapjohcfmg" # Dashlane
+      "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock
+    ];
+  };
+
   system.stateVersion = "25.05";
 }

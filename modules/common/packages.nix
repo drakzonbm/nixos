@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    firefox
+    brave
     git-credential-manager
     docker-compose
     virt-manager
