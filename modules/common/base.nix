@@ -36,7 +36,6 @@
     jack.enable = true;
   };
 
-  sound.enable = false;
   hardware.pulseaudio.enable = false;
 
   boot.loader.systemd-boot.enable = true;
