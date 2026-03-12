@@ -27,10 +27,17 @@
       terminal = "warp-terminal";
       menu = "wofi --show drun";
       output = if hostName == "gaminglaptop" then {
+        "HDMI-A-1" = {
+          bg = "#1e1e2e solid_color";
+          mode = "3840x2160";
+          scale = "1.25";
+          pos = "0 0";
+        };
         "eDP-1" = {
           bg = "#1e1e2e solid_color";
           mode = "3840x2400@120Hz";
           scale = "1.25";
+          pos = "0 1728";
         };
       } else {
         "*" = {
