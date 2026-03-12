@@ -282,5 +282,8 @@
     grim
     slurp
     vscode
-  ];
+  ] ++ (if hostName == "gaminglaptop" then [
+    clickup
+    notion-app-enhanced
+  ] else [ ]);
 }
