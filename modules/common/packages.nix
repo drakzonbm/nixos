@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     brave
+    gh
     git-credential-manager
     docker-compose
     virt-manager
