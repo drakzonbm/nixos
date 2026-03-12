@@ -30,6 +30,7 @@
               networking.hostName = hostName;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
               home-manager.users.drakzon = import ./home/brian.nix;
               home-manager.extraSpecialArgs = {
                 inherit hostName;
