@@ -285,6 +285,6 @@
     clickup
     notion-app-enhanced
     nomachine-client
-    teams
+    teams-for-linux
   ];
 }
