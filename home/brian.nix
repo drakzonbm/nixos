@@ -1,5 +1,19 @@
 { pkgs, hostName, ... }:
 
+let
+  googleDotHackerCursor = pkgs.stdenvNoCC.mkDerivation {
+    pname = "googledot-hacker-cursor";
+    version = "2.0.0";
+    src = ../assets/cursors/GoogleDot-Hacker;
+    dontBuild = true;
+    installPhase = ''
+      runHook preInstall
+      mkdir -p $out/share/icons/GoogleDot-Hacker
+      cp -R ./* $out/share/icons/GoogleDot-Hacker/
+      runHook postInstall
+    '';
+  };
+in
 {
   xdg.mimeApps = {
     enable = true;
@@ -17,6 +31,20 @@
   home.stateVersion = "25.05";
 
   programs.home-manager.enable = true;
+
+  home.pointerCursor = {
+    package = googleDotHackerCursor;
+    name = "GoogleDot-Hacker";
+    size = 36;
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
+  home.sessionVariables = {
+    XCURSOR_THEME = "GoogleDot-Hacker";
+    XCURSOR_SIZE = "36";
+  };
+
   programs.git = {
     enable = true;
     userName = if hostName == "gaminglaptop" then "drakzon" else null;
