@@ -17,6 +17,13 @@
 
   networking.networkmanager.enable = true;
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  services.blueman.enable = true;
+
   services.xserver.enable = false;
   services.displayManager.defaultSession = "sway";
   programs.sway.enable = true;
@@ -71,8 +78,12 @@
     playerctl
     networkmanagerapplet
     kitty
+    warp-terminal
     telegram-desktop
     nodejs_25
+    blueman
+    bluez
+    bluez-tools
   ];
 
   fonts.packages = with pkgs; [

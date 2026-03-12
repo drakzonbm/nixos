@@ -14,4 +14,5 @@
   ];
 
   networking.hostName = "gaminglaptop";
+
 }
